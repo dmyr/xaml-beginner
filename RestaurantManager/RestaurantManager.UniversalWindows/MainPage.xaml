@@ -23,11 +23,7 @@
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="24">
             <Run Text="Internal Test Version"/>
         </TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Run Text="**Go to Orders View**"/>
-        </TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Run Text="**Submit Order**"/>
-        </TextBlock>
+        <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Go to Orders View" Click="ExpediteButton_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Submit Order" Click="OrderButton_Click"/>
     </Grid>
 </Page>

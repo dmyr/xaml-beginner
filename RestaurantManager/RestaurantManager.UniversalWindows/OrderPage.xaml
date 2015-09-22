@@ -20,21 +20,18 @@
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition Width="0.25*"/>
         </Grid.ColumnDefinitions>
-        
         <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Run Text="Special Requests:"/>
         </TextBlock>
-        
         <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Run Text="Order Items:"/>
         </TextBlock>
-        
-        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Run Text="**Add to Order**"/>
-        </TextBlock>
-        
-        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Run Text="**Submit Order**"/>
-        </TextBlock>
+        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"/>
+        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
+        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add to Order"/>
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Submit Order"/>
+        <AppBar Grid.ColumnSpan="3">
+            <AppBarButton Icon="Home" Label="Home" Click="AppBarButton_Click"/>
+        </AppBar>
     </Grid>
 </Page>
