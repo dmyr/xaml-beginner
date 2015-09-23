@@ -29,9 +29,16 @@ namespace RestaurantManager.UniversalWindows
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (this.Frame != null && this.Frame.CanGoBack)
+            if (this.Frame != null)
             {
-                this.Frame.GoBack();
+                if (this.Frame.CanGoBack)
+                {
+                    this.Frame.GoBack();
+                }
+                else
+                {
+                    this.Frame.Navigate(typeof(MainPage));
+                }
             }
         }
     }
