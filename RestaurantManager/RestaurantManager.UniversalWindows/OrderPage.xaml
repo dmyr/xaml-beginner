@@ -6,7 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.TopAppBar>
+        <AppBar>
+            <AppBarButton Icon="Home" Label="Home" Click="AppBarButton_Click"/>
+        </AppBar>
+    </Page.TopAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -26,12 +30,9 @@
         <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Run Text="Order Items:"/>
         </TextBlock>
-        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"/>
-        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
-        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add to Order"/>
-        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Submit Order"/>
-        <AppBar Grid.ColumnSpan="3">
-            <AppBarButton Icon="Home" Label="Home" Click="AppBarButton_Click"/>
-        </AppBar>
+        <ListView x:Name="OrderItemsList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" ItemsSource="{Binding MenuItems, Source={StaticResource DataManager}}" Margin="10"/>
+        <ListView x:Name="SelectedOrderItemsList" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" ItemsSource="{Binding CurrentlySelectedMenuItems, Mode=TwoWay, Source={StaticResource DataManager}}" Margin="10"/>
+        <Button x:Name="AddToOrder"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add to Order" Click="AddToOrderButton_Click"/>
+        <Button x:Name="SubmitOrder" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Submit Order" Click="SubmitOrderButton_Click"/>
     </Grid>
 </Page>
